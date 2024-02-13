@@ -33,6 +33,8 @@ print("Balance:", balance)
 limite= a1.get_limite()
 print("Limite:", limite)
 
+cargo= int(input("Cargar un precio a la tarjeta de credito:"))
+balance1= balance + cargo
 
 class Tarjeta_revolving(Tarjeta_de_credito):
     def __init__  (self, cliente, limite, banco, cuenta, balance=0, cargo_extra=5 ):
@@ -43,8 +45,8 @@ class Tarjeta_revolving(Tarjeta_de_credito):
           
     def procesar_mes(self):                                 
         menusal= (1+ self._cargo_extra)**(1/12)-1
-        interes= menusal * balance
-        self._balance +=interes
+        interes= menusal * balance1
+        self._balance= interes + balance1
         
         print(f"El interes mensual es de {interes} %")
         print(f"Nuevo balance es {self._balance} %")
@@ -56,10 +58,6 @@ b1 = Tarjeta_revolving("Olivia", 2000,  "Santander", 10)
 b1.procesar_mes()
 
 if __name__ == '__main__':
-
-    cargo= int(input("Cargar un precio a la tarjeta de credito:"))
-
-    balance1= balance + cargo
 
     if balance1 > limite:
         cargo= balance + 5

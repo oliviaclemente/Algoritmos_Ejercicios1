@@ -4,9 +4,9 @@ class Animal:
         
 class Osos(Animal):
     def __init__(self):
-        super().__init__()
+        super().__init__("Osos")
     
 class Peces(Animal):
     def __init__(self):
-        super().__init__()
+        super().__init__("Peces")
         

@@ -46,8 +46,8 @@ class Tarjeta_revolving(Tarjeta_de_credito):
           
     def procesar_mes(self):                                 
         menusal= (1+ self._cargo_extra)**(1/12)-1
-        interes= menusal * balance
-        self._balance +=interes
+        interes= menusal * balance1
+        self._balance= interes + balance1
         
         print(f"El interes mensual es de {interes} %")
         print(f"Nuevo balance es {self._balance} %")
