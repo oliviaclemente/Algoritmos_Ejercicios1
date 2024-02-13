@@ -28,29 +28,30 @@ class Tarjeta_de_credito:
 a1= Tarjeta_de_credito("Olivia", 2000, "Santander", 2374382409352, 10)
 print(a1)
 
-cliente = a1.get_cliente()
-print("Cliente:", cliente)
+if __name__ == '__main__':
 
-banco = a1.get_banco()
-print("Banco:", banco)
+    print("Cliente:", a1.get_cliente())
 
-balance= a1.get_balance()
-print("Balance:", balance)
+    print("Banco:", a1.get_banco())
 
-limite= a1.get_limite()
-print("Limite:", limite)
+    balance= a1.get_balance()
+    print("Balance:", balance)
 
-cuenta= a1.get_cuenta()
-print("Cuenta:", cuenta)
+    limite= a1.get_limite()
+    print("Limite:", limite)
 
-cargo= int(input("Cargar un precio a la tarjeta de credito:"))
+    print("Cuenta:",  a1.get_cuenta())
 
-balance1= balance + cargo
+    cargo= int(input("Cargar un precio a la tarjeta de credito:"))
 
-if balance1 < limite:
-    print(f"Se ha cargado con exito, ahora el balance es de {balance1}.") 
-else: 
-    print("No se ha podido realizar el cargo")
+    balance1= balance + cargo
 
-#cargo(precio)?
-#realizar_pago(cantidad)?
+    if balance1 < limite:
+        print(f"Se ha cargado con exito, ahora el balance es de {balance1}.") 
+    else: 
+        print("No se ha podido realizar el cargo")
+
+    realizar_pago= int(input("Cuanto dinero desea ingresar al banco:"))
+
+    balance_nuevo= realizar_pago - balance1
+    print(f"El nuevo balance del banco es {balance_nuevo}")
