@@ -10,3 +10,5 @@ class Peces(Animal):
     def __init__(self):
         super().__init__("Peces")
         
+from random import random
+
