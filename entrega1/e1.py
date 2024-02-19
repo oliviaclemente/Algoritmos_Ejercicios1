@@ -1,36 +1,39 @@
-import random 
+import random
 
-rio= []
+class Osos:
+    def __init__(self):
+        self.nombre = "osos"
 
-for _ in range(10):
-    ecosistema= random.choice(["osos", "peces", "none"])
-    rio.append(ecosistema)
-    
-print(f"Primera lista: {rio}")
+class Peces:
+    def __init__(self):
+        self.nombre = "peces"
 
-
-def mover_none(rio):
-    for i in range(len(rio)):
-        if rio[i] in [ "osos", "peces" ]:
-            mover= random.choice([True, False])
-            if mover:
-                if i < len(rio) - 1 and rio[i+1]== "none":
-                    rio[i], rio[i+1]= rio[i+1], rio[i]
-
+class NoneObjecto:
+    def __init__(self):
+        self.nombre = "none"
 
 def mover_rio(rio):
-    i=0
-    for i in range(len(rio)):
-        if rio[i] in [ "osos", "peces" ]:
-                if i < len(rio)-1 and rio[i+1]== "none":
-                    rio[i], rio[i+1]= rio[i+1], rio[i]
-                i= i+2
-                    
+    for i in reversed(range(len(rio))):
+        if isinstance(rio[i], (Osos, Peces)):
+            mover = random.choice([True, False])
+            if mover:
+                if i < len(rio) - 1 and isinstance(rio[i+1], NoneObjecto):
+                    rio[i], rio[i+1] = rio[i+1], rio[i]
 
-                
+rio = []
 
+for _ in range(10):
+    ecosistema = random.choice([Osos,Peces, NoneObjecto()])
+    rio.append(ecosistema)
 
-#def mover_colision(rio):
-    
+print("Primera lista:")
+for elemento in rio:
+    print(elemento.nombre, end=' ')
+print()
+
 mover_rio(rio)
-print(f"Tercera lista:{rio}")
+
+print("Segunda lista:")
+for elemento in rio:
+    print(elemento.nombre, end=' ')
+print()
