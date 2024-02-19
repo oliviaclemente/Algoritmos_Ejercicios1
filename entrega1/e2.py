@@ -31,7 +31,10 @@ def mover_rio(rio):
                         if rio[i].fuerza > rio[i+1].fuerza:
                             rio[i+1] = NoneObjecto()
                         else:
-                            rio[i] = NoneObjecto()
+                            if rio[i].fuerza > rio[i+1].fuerza:
+                                rio[i+1] = NoneObjecto()
+                            else:
+                                rio[i] = NoneObjecto()
                             
 rio= []
 
@@ -45,7 +48,7 @@ for _ in range(10):
 print("Primera lista:")
 for elemento in rio:
     if isinstance(elemento, (Osos, Peces)):
-        print(f"{elemento.nombre}, {elemento.genero}, {elemento.fuerza}")
+        print(f"/{elemento.nombre}, {elemento.genero}, {elemento.fuerza}/", end=' ')
     else:
         print(elemento.nombre, end=' ')
 print()
@@ -55,7 +58,7 @@ mover_rio(rio)
 print("Segunda lista:")
 for elemento in rio:
     if isinstance(elemento, (Osos, Peces)):
-        print(f"{elemento.nombre}, {elemento.genero}, {elemento.fuerza}")
+        print(f"{elemento.nombre}, {elemento.genero}, {elemento.fuerza}", end=' ')
     else:
         print(elemento.nombre, end=' ')
 print()
