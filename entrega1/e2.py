@@ -62,5 +62,3 @@ for elemento in rio:
     else:
         print(elemento.nombre, end=' ')
 print()
-
-    
