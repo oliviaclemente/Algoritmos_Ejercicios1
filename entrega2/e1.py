@@ -14,6 +14,11 @@ class TowerOfHanoi:
                     palo += " " * 4
             print(palo)
         print("P1|   P2|   P3|")
+    
+    def mover_discos(self, n,origen, destino, extra):
+        
+            
+    
             
         
 discos=4
