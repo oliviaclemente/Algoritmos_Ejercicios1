@@ -1,17 +1,17 @@
 import random
 
 class Osos:
-    def __init__(self):
+    def _init_(self):
         self.nombre = "osos"
 
 class Peces:
-    def __init__(self):
+    def _init_(self):
         self.nombre = "peces"
 
 class NoneObjecto:
-    def __init__(self):
+    def _init_(self):
         self.nombre = "none"
-                                        
+
 def mover_rio(rio):
     for i in reversed(range(len(rio))):
         if isinstance(rio[i], (Osos, Peces)):
@@ -30,17 +30,16 @@ def mover_rio(rio):
                             if isinstance(rio[i], NoneObjecto):
                                 rio[i] = Peces()
                                 break
-                    elif isinstance(rio[i], Osos) and isinstance(rio[i+1], Osos):      
-                             for i in range(len(rio)):
-                                if isinstance(rio[i], NoneObjecto):
-                                    rio[i] = Osos()
-                                    break
-                    
+                    elif isinstance(rio[i], Osos) and isinstance(rio[i+1], Osos):
+                        for i in range(len(rio)):
+                            if isinstance(rio[i], NoneObjecto):
+                                rio[i] = Osos()
+                                break                      
 
 rio = []
 
 for _ in range(10):
-    ecosistema = random.choice([Osos,Peces, NoneObjecto()])
+    ecosistema = random.choice([Osos(), Peces(), NoneObjecto()])
     rio.append(ecosistema)
 
 print("Primera lista:")
