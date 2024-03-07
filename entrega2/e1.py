@@ -15,14 +15,14 @@ class TowerOfHanoi:
             print(palo)
         print("P1|   P2|   P3|")
     
-    def mover_discos(self, n,origen, destino, extra):
-        
-            
-    
-            
+    #def mover_discos(self, n,origen, destino, extra):
+       # self.estructura= [[origen], [extra], [destino]]
+        #for n in origen:
+            #del(origen[0])
+            #extra.append()
+             
         
 discos=4
-estructura= [[1,2,3,4],[],[]]  
+estructura= [[1,2,3,4],[],[]]     #siendo 1 el disco mas pequeño y 4 el mas grande
 torre= TowerOfHanoi(discos,estructura)
 torre.torre_inicial()
-
