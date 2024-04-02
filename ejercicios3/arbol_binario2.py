@@ -14,7 +14,7 @@ class Binary_tree:
 
     def add_element(self, pnode, data):
         if pnode.left is None:
-            pnode.left = self.Node(data)
+            pnode.left= self.Node(data)
             self.size += 1
         elif pnode.right is None:
             pnode.right = self.Node(data)
