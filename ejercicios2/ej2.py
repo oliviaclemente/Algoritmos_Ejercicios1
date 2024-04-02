@@ -42,5 +42,3 @@ def mas_frecuente(secuencia):
 secuencia = [1, 2, 3, 4, 2, 3, 1, 2, 4, 4, 4, 1, 1, 2, 3, 3, 3]
 resultado = mas_frecuente(secuencia)
 print("El número más frecuente es:", resultado)
-
-
