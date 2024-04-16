@@ -22,8 +22,8 @@ class Binary_tree:
         else:
             raise IndexError("The node is full.")
         
-    def add_element_as_child(self, pnode, data, pos = 'l'):
-        if pos == 'l':
+    def add_element_as_child(self, pnode, data, pos = 'l'):     #parámetro pnode representa el nodo al que se le agregará el nuevo elemento
+        if pos == 'l':                                          #data es el dato del nuevo nodo a agregar.
             pnode.left = self.Node(data)
             self.size += 1
         elif pos == 'r':

@@ -2,14 +2,14 @@ class Arbol_binario():
     
     class Nodo():
         def __init__(self, data, left=None, right=None):
-            self.data = data
-            self.left = left
-            self.right = right
+            self.data = data       #data: que almacena el dato asociado al nodo.
+            self.left = left       #left: que apunta al hijo izquierdo del nodo.
+            self.right = right     #right: que apunta al hijo derecho del nodo.
 
-    def __init__(self, root=None):
-        self.root = root
-        self.size = 0
-        self.high = 0
+    def __init__(self, root=None):    
+        self.root = root      #root: que apunta al nodo raíz del árbol.
+        self.size = 0        #size: que representa el número de elementos en el árbol.
+        self.high = 0        #high: que almacena la altura del árbol.
 
     def add_element(self):
         pass

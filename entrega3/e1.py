@@ -13,3 +13,8 @@ class Descomponer:
 class Silicing_Floor_Plan:
     def __init__(self, altura, anchura):
         self.root= Rectangulo(altura, anchura)
+        
+    def descomposcion_horizontal(self, direccion, magnitud):
+        if altura >
+        
+    def descomposicion_vertical(self, direccion, magnitud):

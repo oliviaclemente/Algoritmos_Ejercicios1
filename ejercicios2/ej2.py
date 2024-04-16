@@ -17,6 +17,9 @@
     
     #Devolver Número_más_frecuente
     
+
+
+    
 def mas_frecuente(secuencia):
     # Diccionario para almacenar el conteo de cada número
     conteo = {}
