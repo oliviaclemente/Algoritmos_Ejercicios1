@@ -18,3 +18,4 @@ class Silicing_Floor_Plan:
         if altura >
         
     def descomposicion_vertical(self, direccion, magnitud):
+        
