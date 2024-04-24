@@ -146,29 +146,3 @@ def generate_and_check_networks():
 if __name__ == '__main__':
     generate_and_check_networks()
 
-# Crear un objeto de grafo
-    graph_object = Graph()
-
-    # Insertar el nodo central
-    central_node = graph_object.insert_vertex("Central")
-
-    # Insertar nodos en forma de estrella
-    outer_nodes = ["Node_" + str(i) for i in range(1, 6)]
-    for node in outer_nodes:
-        new_node = graph_object.insert_vertex(node)
-        graph_object.insert_edge(central_node, new_node)
-
-    # Visualizar el grafo estrellado
-    print("Grafo Estrellado:")
-    graph_object.visualize()
-
-    # Calcular el centro del grafo
-    center = graph_object.center()
-    print("Centro del grafo estrellado:")
-    print(center)
-
-    # Verificar si el centro es único
-    if len(center) == 1:
-        print("El centro del grafo es único.")
-    else:
-        print("El centro del grafo no es único.")
