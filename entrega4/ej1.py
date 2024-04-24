@@ -49,7 +49,7 @@ class Graph:
     def is_directed(self):
         return self._incoming is not self._outgoing 
 
-    def insert_vertex(self, x=None):
+    def insert_vertex(self, x= None):
         v = self.Vertex(x)
         self._outgoing[v] = {}
         if self.is_directed():
