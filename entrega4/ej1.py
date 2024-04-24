@@ -1,7 +1,9 @@
 import networkx as nx 
 import matplotlib.pyplot as plt 
 
+
 class Graph:
+    
     class Vertex:
         def _init_(self, x):
             self._element = x
@@ -50,7 +52,7 @@ class Graph:
         return self._incoming is not self._outgoing 
 
     def insert_vertex(self, x= None):
-        v = self.Vertex(x)
+        v= self.Vertex(x)
         self._outgoing[v] = {}
         if self.is_directed():
             self._incoming[v] = {}
@@ -109,8 +111,7 @@ class Graph:
         # Return the maximum distance
         return max(distances.values())
 
-if __name__ == '__main__':
-    # Define the graph
+
     graph = {
         'A': ['B', 'C'],
         'B': ['A', 'C', 'D'],
