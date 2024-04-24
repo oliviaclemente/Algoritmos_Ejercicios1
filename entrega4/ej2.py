@@ -145,4 +145,3 @@ def generate_and_check_networks():
 
 if __name__ == '__main__':
     generate_and_check_networks()
-
