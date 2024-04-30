@@ -1,4 +1,3 @@
-User
 import networkx as nx 
 import matplotlib.pyplot as plt 
 
@@ -131,6 +130,7 @@ def convert_to_graph(G):
 
     return graph
 
+
 if __name__ == '__main__':
     # Crear un objeto de grafo
     graph_object = Graph()
@@ -144,17 +144,36 @@ if __name__ == '__main__':
         new_node = graph_object.insert_vertex(node)
         graph_object.insert_edge(central_node, new_node)
 
-    # Visualizar el grafo estrellado
-    print("Grafo Estrellado:")
-    graph_object.visualize()
-
-    # Calcular el centro del grafo
-    center = graph_object.center()
-    print("Centro del grafo estrellado:")
-    print(center)
-
     # Verificar si el centro es único
+    center = graph_object.center()
     if len(center) == 1:
         print("El centro del grafo es único.")
     else:
         print("El centro del grafo no es único.")
+
+    # Visualizar el grafo estrellado
+    print("Grafo Estrellado:")
+    graph_object.visualize()
+
+    # Configuración 1: Grafo completo de 5 nodos
+    complete_graph = Graph()
+    nodes = [complete_graph.insert_vertex("Node_" + str(i)) for i in range(1, 6)]
+    for i in range(5):
+        for j in range(i+1, 5):
+            complete_graph.insert_edge(nodes[i], nodes[j])
+    print("Centro del grafo completo de 5 nodos:", complete_graph.center())
+
+    # Configuración 2: Grafo lineal de 5 nodos
+    line_graph = Graph()
+    nodes = [line_graph.insert_vertex("Node_" + str(i)) for i in range(1, 6)]
+    for i in range(4):
+        line_graph.insert_edge(nodes[i], nodes[i+1])
+    print("Centro del grafo lineal de 5 nodos:", line_graph.center())
+
+    # Configuración 3: Grafo de estrella invertida de 5 nodos
+    inverted_star_graph = Graph()
+    central_node = inverted_star_graph.insert_vertex("Central")
+    outer_nodes = [inverted_star_graph.insert_vertex("Node_" + str(i)) for i in range(1, 6)]
+    for node in outer_nodes:
+        inverted_star_graph.insert_edge(node, central_node)
+    print("Centro del grafo de estrella invertida de 5 nodos:", inverted_star_graph.center())
