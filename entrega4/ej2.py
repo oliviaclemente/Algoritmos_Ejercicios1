@@ -88,7 +88,8 @@ class Grafo:
             elif excentricidad == len(centro):
                 centro.add(vertice)  # Si la excentricidad es igual, agregar el vértice al conjunto de vértices del centro
 
-        return centro  
+        return centro 
+    
     def excentricidad(self, v):
         distancias = {vertice: -1 for vertice in self._saliente.keys()}  # diccionario de distancias con valores -1
 
@@ -174,17 +175,18 @@ if __name__ == '__main__':
     vertices_arbol = [grafo_arbol.insertar_vertice(nodo) for nodo in nodos_arbol]
 
     # Insertar aristas para formar un árbol
-    grafo_arbol.insertar_arista(vertices_arbol[0], vertices_arbol[1])  # Raíz -> A
-    grafo_arbol.insertar_arista(vertices_arbol[0], vertices_arbol[2])  # Raíz -> B
-    grafo_arbol.insertar_arista(vertices_arbol[1], vertices_arbol[3])  # A -> C
-    grafo_arbol.insertar_arista(vertices_arbol[1], vertices_arbol[4])  # A -> D
+    grafo_arbol.insertar_arista(vertices_arbol[0], vertices_arbol[1])  
+    grafo_arbol.insertar_arista(vertices_arbol[0], vertices_arbol[2])  
+    grafo_arbol.insertar_arista(vertices_arbol[1], vertices_arbol[3])  
+    grafo_arbol.insertar_arista(vertices_arbol[1], vertices_arbol[4])  
 
     print("Grafo de Árbol:")
     grafo_arbol.visualizar()
 
     centro_arbol = grafo_arbol.centro()
     print("Centro del Grafo de Árbol:", centro_arbol)
-
+    
+    
   
     centro_estrellado = objeto_grafo.centro()
     if len(centro_estrellado) == 1:
@@ -203,5 +205,4 @@ if __name__ == '__main__':
         print("El centro del Grafo de Árbol es único.")
     else:
         print("El centro del Grafo de Árbol no es único.")
-
 
