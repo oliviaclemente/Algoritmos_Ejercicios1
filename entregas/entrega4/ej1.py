@@ -77,7 +77,6 @@ class Graph:
         plt.show() 
 
     def center(self):
-        # Initialize center to be all vertices
         center = set(self._outgoing.keys())
 
         for vertex in self._outgoing:
@@ -90,13 +89,12 @@ class Graph:
         return center
 
     def eccentricity(self, v):
-        # Initialize distances to all other vertices as -1 (unreachable)
         distances = {vertex: -1 for vertex in self._outgoing.keys()}
 
-        # Start from vertex v
+    
         distances[v] = 0
 
-        # Queue for BFS
+        
         queue = [v]
 
         while queue:
@@ -106,18 +104,17 @@ class Graph:
                     distances[neighbor] = distances[current_vertex] + 1
                     queue.append(neighbor)
 
-        # Return the maximum distance
         return max(distances.values())
 
-# Función para generar un grafo aleatorio
+
 def generate_random_graph(n, p):
     G = nx.gnp_random_graph(n, p)
     return G
 
-# Función para convertir un grafo de networkx a nuestra implementación de Graph
+
 def convert_to_graph(G):
     graph = Graph()
-    vertex_map = {}  # Mapeo de nodos de NetworkX a nodos de Graph
+    vertex_map = {} 
 
     for node in G.nodes():
         v = graph.insert_vertex(node)
@@ -132,26 +129,22 @@ def convert_to_graph(G):
 
 
 if __name__ == '__main__':
-    # Crear un objeto de grafo
+   
     graph_object = Graph()
 
-    # Insertar el nodo central
     central_node = graph_object.insert_vertex("Central")
 
-    # Insertar nodos en forma de estrella
     outer_nodes = ["Node_" + str(i) for i in range(1, 6)]
     for node in outer_nodes:
         new_node = graph_object.insert_vertex(node)
         graph_object.insert_edge(central_node, new_node)
 
-    # Verificar si el centro es único
     center = graph_object.center()
     if len(center) == 1:
         print("El centro del grafo es único.")
     else:
         print("El centro del grafo no es único.")
 
-    # Visualizar el grafo estrellado
     print("Grafo Estrellado:")
     graph_object.visualize()
 
